@@ -1,0 +1,273 @@
+package org.apache.jsp;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.jsp.*;
+import static org.teacherstudentportal.controller.loginController.checklogin;
+
+public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
+    implements org.apache.jasper.runtime.JspSourceDependent {
+
+  private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
+
+  private static java.util.List<String> _jspx_dependants;
+
+  private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
+
+  public java.util.List<String> getDependants() {
+    return _jspx_dependants;
+  }
+
+  public void _jspService(HttpServletRequest request, HttpServletResponse response)
+        throws java.io.IOException, ServletException {
+
+    PageContext pageContext = null;
+    HttpSession session = null;
+    ServletContext application = null;
+    ServletConfig config = null;
+    JspWriter out = null;
+    Object page = this;
+    JspWriter _jspx_out = null;
+    PageContext _jspx_page_context = null;
+
+    try {
+      response.setContentType("text/html;charset=UTF-8");
+      pageContext = _jspxFactory.getPageContext(this, request, response,
+      			null, true, 8192, true);
+      _jspx_page_context = pageContext;
+      application = pageContext.getServletContext();
+      config = pageContext.getServletConfig();
+      session = pageContext.getSession();
+      out = pageContext.getOut();
+      _jspx_out = out;
+      _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
+
+      out.write("\n");
+      out.write("\n");
+      out.write("<!DOCTYPE html>\n");
+      out.write("<html>\n");
+      out.write("    <head>\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("        <title>Teacher Student Portal</title>\n");
+      out.write("        <link href=\"CSS.css\" rel=\"stylesheet\" type=\"text/css\"/>\n");
+      out.write("        <link rel=\"stylesheet\" href=\"http:pure/pure-min.css\">\n");
+      out.write("<body>\n");
+      out.write("    <div class=\"top\"> \n");
+      out.write("        <h1>Teacher Student Portal</h1>\n");
+      out.write("    </div>\n");
+      out.write("    <h2 align=\"center\">Hello ");
+      out.print(checklogin.getUser());
+      out.write("</h2>\n");
+      out.write("    <div style=\"float: right\">\n");
+      out.write("        ");
+      out.print( new java.util.Date());
+      out.write("\n");
+      out.write("    </div>\n");
+      out.write("\n");
+      out.write("    <div class=\"pure-menu pure-menu-open pure-menu-horizontal\">\n");
+      out.write("        <ul>\n");
+      out.write("            <li><a href=\"adminController?action=showallinstructor\">Instructor</a></li>\n");
+      out.write("            <li><a href=\"adminController?action=showallstudent\">Student</a></li>\n");
+      out.write("            <li><a href=\"adminController?action=showcourse\">Course</a></li>\n");
+      out.write("            <li><a href=\"adminController?action=showdept\">Department</a></li>\n");
+      out.write("            <li><a href=\"login.jsp\">Logout</a></li>\n");
+      out.write("            \n");
+      out.write("        </ul>\n");
+      out.write("    </div>\n");
+      out.write("\n");
+      out.write("    <div style=\"border: solid 0px black;width:1120px;height: 450px;float:left;padding: 20px 30px 20px 40px;margin: auto;\">\n");
+      out.write("\n");
+      out.write("        <div style=\"border: solid 0px black;width:290px;height:450px;float:left;margin: auto\">\n");
+      out.write("            <hr>\n");
+      out.write("            <h2>Instructor Details</h2>\n");
+      out.write("            <hr>\n");
+      out.write("            <form action=\"insertInsData\" method=\"post\">\n");
+      out.write("                <table>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td><label>Instructor ID :</label></td>\n");
+      out.write("                        <td><input name=\"insid\" type=\"text\" size=\"25\" style=\"height:20px;\" id=\"user_name\" class=\"input\"/></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td><label>First Name :</label> </td>          \n");
+      out.write("                        <td><input name=\"insfname\" type=\"text\"  id=\"user_pass\" class=\"input\" value=\"\" size=\"25\" style=\"height:20px;\" /></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td><label>Last Name :</label></td>\n");
+      out.write("                        <td><input name=\"inslname\" type=\"text\" size=\"25\" style=\"height:20px;\" id=\"user_name\" class=\"input\"/></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td><label>D.O.B :</label></td>\n");
+      out.write("                        <td><input name=\"insdob\" type=\"text\"  id=\"user_pass\" class=\"input\" value=\"\" size=\"25\" style=\"height: 20px;\" /></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td><label>Sex :</label></td>\n");
+      out.write("                        <td><input name=\"inssex\" type=\"text\" size=\"25\" style=\"height:20px;\" id=\"user_name\" class=\"input\"/></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td><label>Address :</label></td>\n");
+      out.write("                        <td>  <input name=\"insaddress\" type=\"text\" size=\"25\" style=\"height:20px;\" id=\"user_name\" class=\"input\"/></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td><label>Email-id :</label></td>\n");
+      out.write("                        <td><input  name=\"insemail\" type=\"text\"  id=\"user_name\" class=\"input\" value=\"\" size=\"25\" style=\"height: 20px;\"/></td>\n");
+      out.write("                    </tr> \n");
+      out.write("                    <tr>\n");
+      out.write("                        <td> <label>Department-Id:</label></td>\n");
+      out.write("                        <td><input name=\"insdepid\" type=\"text\"  id=\"user_pass\" class=\"input\" value=\"\" size=\"25\" style=\"height: 20px;\"></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td> <label>Password :</label></td>\n");
+      out.write("                        <td><input name=\"inspassword\" type=\"text\"  id=\"user_pass\" class=\"input\" value=\"\" size=\"25\" style=\"height: 20px;\"></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td> <label>Phone No :</label></td>\n");
+      out.write("                        <td><input name=\"insphone\" type=\"text\"  id=\"user_pass\" class=\"input\" value=\"\" size=\"25\" style=\"height: 20px;\"></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    \n");
+      out.write("                    <tr>\n");
+      out.write("                        <td><input type=\"submit\" value=\"Reset\" class=\"pure-button pure-button-primary\"></td>\n");
+      out.write("                        <td><input type=\"submit\" value=\"Submit\" class=\"pure-button pure-button-primary\" ></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                </table>\n");
+      out.write("            </form>\n");
+      out.write("        </div>\n");
+      out.write("        \n");
+      out.write("        \n");
+      out.write("        <div style=\"border: solid 0px black;width:280px;height:450px;float:left;margin: auto\">\n");
+      out.write("            <hr>\n");
+      out.write("            <h2>Student</h2>\n");
+      out.write("            <hr>\n");
+      out.write("             <form action=\"insertStuData\" method=\"post\">\n");
+      out.write("                <table>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td><label>Student ID :</label></td>\n");
+      out.write("                        <td><input name=\"sid\" type=\"text\" size=\"25\" style=\"height:20px;\" id=\"user_name\" class=\"input\"/></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td><label>First Name :</label> </td>          \n");
+      out.write("                        <td><input name=\"insfname\" type=\"text\"  id=\"user_pass\" class=\"input\" value=\"\" size=\"25\" style=\"height:20px;\" /></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td><label>Last Name :</label></td>\n");
+      out.write("                        <td><input name=\"inslname\" type=\"text\" size=\"25\" style=\"height:20px;\" id=\"user_name\" class=\"input\"/></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td><label>D.O.B :</label></td>\n");
+      out.write("                        <td><input name=\"insdob\" type=\"text\"  id=\"user_pass\" class=\"input\" value=\"\" size=\"25\" style=\"height: 20px;\" /></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td><label>Sex :</label></td>\n");
+      out.write("                        <td><input name=\"inssex\" type=\"text\" size=\"25\" style=\"height:20px;\" id=\"user_name\" class=\"input\"/></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td><label>Email-id :</label></td>\n");
+      out.write("                        <td><input  name=\"insemail\" type=\"text\"  id=\"user_name\" class=\"input\" value=\"\" size=\"25\" style=\"height: 20px;\"/></td>\n");
+      out.write("                    </tr> \n");
+      out.write("                    <tr>\n");
+      out.write("                        <td><label>Address :</label></td>\n");
+      out.write("                        <td>  <input name=\"insaddress\" type=\"text\" size=\"25\" style=\"height:20px;\" id=\"user_name\" class=\"input\"/></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td> <label>Phone No :</label></td>\n");
+      out.write("                        <td><input name=\"insphone\" type=\"text\"  id=\"user_pass\" class=\"input\" value=\"\" size=\"25\" style=\"height: 20px;\"></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td> <label>Password :</label></td>\n");
+      out.write("                        <td><input name=\"inspassword\" type=\"text\"  id=\"user_pass\" class=\"input\" value=\"\" size=\"25\" style=\"height: 20px;\"></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    <tr>\n");
+      out.write("                    <td><label>Instructor ID :</label></td>\n");
+      out.write("                        <td><input name=\"insid\" type=\"text\" size=\"25\" style=\"height:20px;\" id=\"user_name\" class=\"input\"/></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td> <label>Department-Id:</label></td>\n");
+      out.write("                        <td><input name=\"insdepid\" type=\"text\"  id=\"user_pass\" class=\"input\" value=\"\" size=\"25\" style=\"height: 20px;\"></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td><input type=\"submit\" value=\"Reset\" class=\"pure-button pure-button-primary\"></td>\n");
+      out.write("                        <td><input type=\"submit\" value=\"Submit\" class=\"pure-button pure-button-primary\" ></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                </table>\n");
+      out.write("            </form>\n");
+      out.write("        </div>\n");
+      out.write(" \n");
+      out.write("        \n");
+      out.write("        \n");
+      out.write("        \n");
+      out.write("        \n");
+      out.write("        \n");
+      out.write("        <div style=\"border: solid 0px black;width:280px;height:250px;float:left;margin: auto\">\n");
+      out.write("            <hr>\n");
+      out.write("            <h2>Course</h2>\n");
+      out.write("            <hr>\n");
+      out.write("                <form action=\"insertCouData\" method=\"post\">\n");
+      out.write("                <table>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td><label>Course ID :</label></td>\n");
+      out.write("                        <td><input name=\"cid\" type=\"text\" size=\"25\" style=\"height:20px;\" id=\"user_name\" class=\"input\"/></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td><label>Course Title :</label> </td>          \n");
+      out.write("                        <td><input name=\"ctitle\" type=\"text\"  id=\"user_pass\" class=\"input\" value=\"\" size=\"25\" style=\"height:20px;\" /></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td><label>Course Desc :</label></td>\n");
+      out.write("                        <td><input name=\"cdesc\" type=\"text\" size=\"25\" style=\"height:20px;\" id=\"user_name\" class=\"input\"/></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td><label>Course Credit :</label></td>\n");
+      out.write("                        <td><input name=\"ccredit\" type=\"text\"  id=\"user_pass\" class=\"input\" value=\"\" size=\"25\" style=\"height: 20px;\" /></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td><label>Department ID :</label></td>\n");
+      out.write("                        <td><input name=\"depid\" type=\"text\" size=\"25\" style=\"height:20px;\" id=\"user_name\" class=\"input\"/></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                        <td><input type=\"submit\" value=\"Reset\" class=\"pure-button pure-button-primary\"></td>\n");
+      out.write("                        <td><input type=\"submit\" value=\"Submit\" class=\"pure-button pure-button-primary\" onclick=\"validateform()\"></td>\n");
+      out.write("                    </tr>\n");
+      out.write("            </table>\n");
+      out.write("          </form>       \n");
+      out.write("        </div>\n");
+      out.write("        \n");
+      out.write("        \n");
+      out.write("        \n");
+      out.write("        \n");
+      out.write("        \n");
+      out.write("        \n");
+      out.write("        <div style=\"border: solid 0px black;width:240px;height:270px;float:left;margin:auto\">\n");
+      out.write("            <hr>\n");
+      out.write("            <h2>Department</h2>\n");
+      out.write("            <hr>\n");
+      out.write("                <form action=\"insertDepData\" method=\"post\">\n");
+      out.write("                <table>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td><label>Department ID :</label></td>\n");
+      out.write("                        <td><input name=\"depid\" type=\"text\" size=\"25\" style=\"height:20px;\" id=\"user_name\" class=\"input\"/></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    <tr>\n");
+      out.write("                        <td><label>Department Name :</label> </td>          \n");
+      out.write("                        <td><input name=\"depname\" type=\"text\"  id=\"user_pass\" class=\"input\" value=\"\" size=\"25\" style=\"height:20px;\" /></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                     </tr>\n");
+      out.write("                        <td><input type=\"reset\" value=\"Reset\" class=\"pure-button pure-button-primary\"></td>\n");
+      out.write("                        <td><input type=\"submit\" value=\"Submit\" class=\"pure-button pure-button-primary\" onclick=\"validateform()\"></td>\n");
+      out.write("                    </tr>\n");
+      out.write("                </table>\n");
+      out.write("                </form>\n");
+      out.write("           </div>\n");
+      out.write("    </div>\n");
+      out.write("</body>\n");
+      out.write("</html>\n");
+    } catch (Throwable t) {
+      if (!(t instanceof SkipPageException)){
+        out = _jspx_out;
+        if (out != null && out.getBufferSize() != 0)
+          out.clearBuffer();
+        if (_jspx_page_context != null) _jspx_page_context.handlePageException(t);
+        else throw new ServletException(t);
+      }
+    } finally {
+      _jspxFactory.releasePageContext(_jspx_page_context);
+    }
+  }
+}
